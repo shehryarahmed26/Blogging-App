@@ -1,13 +1,23 @@
+'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header = () => {
+  const [navshadow, setnavshadow] = useState('')
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      setnavshadow('shadow-md')
+    }
+    else {
+      setnavshadow('')
+    }
+  })
   return (
-    <div className='flex justify-between px-14 py-4 items-center'>
+    <div className={`flex justify-between px-14 py-4 items-center sticky top-0 bg-white z-10 transition-all ${navshadow}`}>
         <div className="logo">
             <h1 className='text-4xl font-bold'>LOGO.</h1>
         </div>
-        <div className="links flex gap-10">
+        <div className="links hidden sm:flex gap-10">
         <Link href={'/'}>
         <p className='font-semibold hover:scale-105 transition-all hover:text-blue-500'>Home</p>
         </Link>

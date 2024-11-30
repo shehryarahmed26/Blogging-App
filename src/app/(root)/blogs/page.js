@@ -1,11 +1,22 @@
+import Blogcard from '@/app/components/blogcard'
 import Header from '@/app/components/header/Header'
 import React from 'react'
 
-const Blogs = () => {
+const Blogs = async () => {
+  let allblogs = await fetch('http://localhost:3000/api/blogs')
+  allblogs = await allblogs.json()
+  const blogs = allblogs.blogs
   return (
     <div>  
       <Header/>
-      Blogs
+      <h2 className='text-center text-2xl sm:text-4xl text-gray-950 pb-10 pt-4'>Explore Blogs</h2>
+      <div className='flex flex-wrap justify-center gap-6'>
+        {
+          blogs.map((blog) => (
+            <Blogcard key={blog._id} blog={blog} />
+          ))
+        }
+      </div>
       </div>
   )
 }
