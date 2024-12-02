@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <div className={`flex justify-between px-14 py-4 items-center sticky top-0 bg-white z-10 transition-all ${navshadow}`}>
         <div className="logo">
+          <Link href={'/'}>
             <h1 className='text-4xl font-bold'>LOGO.</h1>
+          </Link>
         </div>
         <div className="links hidden sm:flex gap-10">
         <Link href={'/'}>
