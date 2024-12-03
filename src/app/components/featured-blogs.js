@@ -17,7 +17,7 @@ const Featuredblogs = async () => {
           </h2>
          <div className='w-full flex flex-wrap justify-center gap-6 '>
           {fewblogs.map((blog) => (
-            <Blogcard blog={blog}/>
+            <Blogcard key={blog._id} blog={blog}/>
           ))}
          </div>
         </div>
