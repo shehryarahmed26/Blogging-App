@@ -3,7 +3,7 @@ import Header from '@/app/components/header/Header'
 import React from 'react'
 
 const Blogs = async () => {
-  let allblogs = await fetch('http://localhost:3000/api/blogs')
+  let allblogs = await fetch('https://blogging-app-sh.vercel.app/api/blogs')
   allblogs = await allblogs.json()
   const blogs = allblogs.blogs
   return (

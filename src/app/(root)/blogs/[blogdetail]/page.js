@@ -3,7 +3,7 @@ import React from 'react'
 
 const BlogDetail = async ({params}) => {
     const {blogdetail} = await params;
-    let getblog = await fetch(`http://localhost:3000/api/blogs/${blogdetail}`, {cache: 'no-cache'})
+    let getblog = await fetch(`https://blogging-app-sh.vercel.app/api/blogs/${blogdetail}`, {cache: 'no-cache'})
     getblog = await getblog.json()
   return (
     <div>
