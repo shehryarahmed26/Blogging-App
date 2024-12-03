@@ -1,17 +1,24 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Header = () => {
   const [navshadow, setnavshadow] = useState('')
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      setnavshadow('shadow-md')
-    }
-    else {
-      setnavshadow('')
-    }
-  })
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setnavshadow("shadow-md");
+      } else {
+        setnavshadow("");
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []); // Empty dependency array ensures it runs once after component mounts
   return (
     <div className={`flex justify-between px-14 py-4 items-center sticky top-0 bg-white z-10 transition-all ${navshadow}`}>
         <div className="logo">
