@@ -1,5 +1,5 @@
-import DBCONNECT from "@/app/lib/DBconnect";
-import blogmodel from "@/app/lib/Modelconnect";
+import DBCONNECT from "@/lib/DBconnect";
+import blogmodel from "@//lib/Modelconnect";
 
 export async function GET (res) {
     DBCONNECT();

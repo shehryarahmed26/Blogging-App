@@ -1,4 +1,4 @@
-import blogmodel from "@/app/lib/Modelconnect"
+import blogmodel from "@/lib/Modelconnect"
 
 export async function GET (res, {params})  {
     const {blogdetails} = await params
