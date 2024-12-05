@@ -2,7 +2,7 @@ import React from 'react'
 import Blogcard from './blogcard';
 
 const Featuredblogs = async () => {
-    let featuredblogs = await fetch('https://blogging-app-sh.vercel.app/api/blogs')
+    let featuredblogs = await fetch('http://localhost:3000/api/blogs')
     featuredblogs = await featuredblogs.json();
     const fewblogs = featuredblogs?.blogs.splice(0, 3)
     console.log(fewblogs);

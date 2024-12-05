@@ -1,5 +1,4 @@
-const { Mongoose, default: mongoose } = require("mongoose");
-
+import mongoose from 'mongoose'
 const DBCONNECT =  async () => {
     try {
 
